@@ -14,8 +14,8 @@ DEFAULT_DB = "./nmapct.ctb"
 
 def myprint(msg):
     global verbosity_flag
-    if verbosity_flag == true;
-    print msg
+    if verbosity_flag == true:
+        print msg
 
     return
 
