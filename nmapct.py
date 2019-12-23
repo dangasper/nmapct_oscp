@@ -11,10 +11,13 @@ import sqlite3
 
 VERSION = "1.0"
 DEFAULT_DB = "./nmapct.ctb"
+true = 1
+false = 0
+verb_flag = false
 
 def myprint(msg):
-    global verbosity_flag
-    if verbosity_flag == true:
+    global verb_flag
+    if verb_flag == true:
         print msg
 
     return
@@ -31,7 +34,8 @@ def usage(name):
     return
 
 def main(argv, environ):
-    global verbosity_flag
+    global verb_flag
+    nodb_flag = false
     argc = len(argv)
 
     if argc == 1:
@@ -50,7 +54,7 @@ def main(argv, environ):
             usage(argv[0])
             sys.exit(0)
         if field in ("-v", "--verbose"):
-            verbosity_flag = true
+            verb_flag = true
         if field in ("-d", "--database"):
             db_path = val
         if field in ("-n", "--nodb"):
