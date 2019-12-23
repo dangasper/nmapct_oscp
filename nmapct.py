@@ -30,8 +30,6 @@ def usage(name):
 
     return
 
-def createdb(dbfile):
-
 def main(argv, environ):
     global verbosity_flag
     argc = len(argv)
